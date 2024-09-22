@@ -10,27 +10,26 @@ namespace BankAccount
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public int Salary {  get; set; }
+        public double Salary {  get; set; }
 
-        public Employee(string firstName, string lastName, int salary)
+        public Employee(string firstName, string lastName)          //KONSTRUKTOR
         {
             firstName = firstName;
             lastName = lastName;
-            salary = salary;
-
+            
         }
 
-        public int GetAnnualSalary(int salary)
+        public double GetAnnualSalary()
         {
-            int annualSalary = salary * 12;
+            double annualSalary = Salary * 12;
             
             return annualSalary;
         }
 
-        public double GiveRaise(double percentage)
+        public void GiveRaise(double percentage)
         {
-            double salaryRaise = 0.10 * Salary;
-            return salaryRaise;
+            Salary = Salary * ((percentage /100)+1);
+           
         }
 
     }
