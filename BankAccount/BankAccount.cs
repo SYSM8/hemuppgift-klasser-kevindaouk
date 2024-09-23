@@ -31,7 +31,7 @@ namespace BankAccount
         
         public void Withdraw(double amount)
         {
-            if(amount < Balance)
+            if(amount <= Balance)
             {
                 Balance -= amount;
             }
